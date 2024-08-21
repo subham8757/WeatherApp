@@ -1,6 +1,6 @@
 import axios from "axios";
-import React, { useState, useCallback } from "react";
-import debounce from "lodash.debounce";
+import React, { useState } from "react";
+
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -74,7 +74,7 @@ const Weather = () => {
       style={{ backgroundImage: `url('/backgroud.jpg')` }}
     >
 
-      
+
       <h1 className="text-5xl mt-7 text-white font-sans">WEATHER APP</h1>
       <div className="mt-8 w-full max-w-md px-4 py-8 bg-white bg-opacity-80 rounded-lg shadow-lg">
         <input
