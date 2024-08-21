@@ -4,12 +4,10 @@ import debounce from "lodash.debounce";
 
 const Weather = () => {
   const [city, setCity] = useState("");
-  const [location, setLocation] = useState({});
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
   const [error, setError] = useState("");
   const [unit, setUnit] = useState("metric"); 
-
 
   const fetchWeatherData = async () => {
     if (!city) {
@@ -18,7 +16,6 @@ const Weather = () => {
     }
 
     try {
-    
       const locationResponse = await axios.get(
         `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=8da59502e924c6782053a4bae8f326a8`
       );
@@ -29,15 +26,11 @@ const Weather = () => {
       }
 
       const locationData = locationResponse.data[0];
-      setLocation(locationData);
-
-     
       const weatherResponse = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${locationData.lat}&lon=${locationData.lon}&appid=8da59502e924c6782053a4bae8f326a8&units=${unit}`
       );
       setWeather(weatherResponse.data);
 
-     
       const forecastResponse = await axios.get(
         `https://api.openweathermap.org/data/2.5/forecast?lat=${locationData.lat}&lon=${locationData.lon}&appid=8da59502e924c6782053a4bae8f326a8&units=${unit}`
       );
@@ -59,10 +52,9 @@ const Weather = () => {
     }
   };
 
- 
   const debouncedFetchWeatherData = useCallback(
     debounce(() => fetchWeatherData(), 500),
-    [city, unit] // 
+    [city, unit] // Added city and unit as dependencies
   );
 
   const handleClick = () => {
