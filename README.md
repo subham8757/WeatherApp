@@ -18,7 +18,6 @@ A simple and interactive weather application built with React that provides curr
 
 - **React**: Frontend library for building user interfaces.
 - **Axios**: For making HTTP requests to the OpenWeatherMap API.
-- **Lodash**: Provides utility functions like `debounce` to optimize performance.
 - **Tailwind CSS**: Utility-first CSS framework for styling the component.
 
 ## Installation
@@ -73,7 +72,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - OpenWeatherMap API for weather data.
 - Tailwind CSS for styling.
-- Lodash for utility functions.
+
 
 ---
 
