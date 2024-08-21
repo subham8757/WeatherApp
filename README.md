@@ -1,6 +1,3 @@
-Certainly! Here's a README file for your Weather App with emojis, icons, and some animated flair to make it more engaging:
-
----
 
 # 🌤️ Weather App
 
