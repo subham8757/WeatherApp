@@ -52,13 +52,10 @@ const Weather = () => {
     }
   };
 
-  const debouncedFetchWeatherData = useCallback(
-    debounce(() => fetchWeatherData(), 500),
-    [city, unit] // Added city and unit as dependencies
-  );
+ 
 
   const handleClick = () => {
-    debouncedFetchWeatherData();
+    fetchWeatherData()
   };
 
   const handleUnitToggle = () => {
